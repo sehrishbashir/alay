@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALEY — Wear Your Story. Own Your Fit.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#3E1A1B;
+    --maroon-deep:#2C1213;
+    --cream:#F2ECE2;
+    --navy:#1B2740;
+    --navy-deep:#141D30;
+    --gold:#C9A97E;
+    --ink:#241512;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Roboto',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  .section{
+    width:100%;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:4vw 7vw;
+    overflow:hidden;
+  }
+  .num{
+    position:absolute;
+    top:32px;
+    left:32px;
+    font-size:13px;
+    letter-spacing:0.15em;
+    opacity:0.55;
+    font-weight:500;
+  }
+  .arrow-btn{
+    width:56px;height:56px;
+    border-radius:50%;
+    border:1px solid currentColor;
+    display:flex;align-items:center;justify-content:center;
+    text-decoration:none;
+    color:inherit;
+    font-size:20px;
+    transition:transform .35s ease, background .35s ease;
+    flex-shrink:0;
+  }
+  .arrow-btn:hover{
+    transform:translateX(6px);
+    background:rgba(255,255,255,0.08);
+  }
+
+  /* ===== SECTION 1 — HERO ===== */
+  #s1{
+    background:radial-gradient(120% 140% at 78% 30%, #4A2223 0%, var(--maroon) 45%, var(--maroon-deep) 100%);
+    color:var(--cream);
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    align-items:center;
+    gap:2rem;
+    padding-bottom: 0;
+  }
+  .hero-left .eyebrow{
+    font-size:14px;
+    letter-spacing:0.35em;
+    font-weight:600;
+    opacity:0.85;
+    margin-bottom:1.4rem;
+  }
+  .hero-title{
+    font-size:clamp(3.2rem,9vw,7.2rem);
+    line-height:0.92;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+  }
+  .hero-title .line1{color:var(--cream);display:block;}
+  .hero-title .line2{
+    display:block;
+    color: #131c2f;
+  }
+  .hero-tagline{
+    margin-top:1rem;
+    font-size:1.25rem;
+    line-height:1.5;
+    font-weight:400;
+    max-width:320px;
+    opacity:0.92;
+  }
+  .hero-url{
+    margin-top:1.6rem;
+    padding-top:1.2rem;
+    border-top:1px solid rgba(242,236,226,0.35);
+    display:inline-block;
+    font-size:0.95rem;
+    letter-spacing:0.03em;
+    opacity:0.85;
+    color: white;
+    text-decoration: none;
+  }
+  .hero-topbar{
+    position:absolute;
+    top:32px; right:32px;
+  }
+  .hero-figure{
+    position:relative;
+    height:100%;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .hero-figure div{
+    background-image: url(Images/hero-model-transparent.png);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom center;
+  }
+  /* ===== SECTION 2 — WORDMARK ===== */
+  #s2{
+    background:#ede8e2;
+    color:var(--maroon);
+    align-items:center;
+    text-align:center;
+  }
+  .est{
+    position:absolute;
+    top:32px; right:40px;
+    font-size:13px;
+    letter-spacing:0.2em;
+    color:var(--ink);
+    opacity:0.6;
+  }
+  .wordmark{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:clamp(4rem,13vw,15rem);
+    line-height:1;
+  }
+  .wordmark-sub{
+    margin-top:0.6rem;
+    font-family:'Roboto',sans-serif;
+    font-weight:600;
+    letter-spacing:0.5em;
+    font-size:clamp(0.85rem,1.6vw,1.15rem);
+    color:var(--navy);
+    text-transform:uppercase;
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+  }
+  .claims{
+    margin-top:3.5rem;
+    display:flex;
+    gap:2.5rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    font-family:'Roboto',sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.15em;
+    font-weight:500;
+    opacity:0.75;
+  }
+  #s2 .arrow-btn{
+    position:absolute;
+    bottom:40px; right:40px;
+    color:var(--maroon);
+  }
+
+  /* ===== SECTION 3 — ABOUT US ===== */
+  #s3{
+    background:var(--cream);
+    color:var(--ink);
+    display:grid;
+    grid-template-columns: 0.85fr 1.65fr 0.85fr;
+    gap:5rem;
+    align-items:center;
+    padding:3vw 7vw;
+    min-height:auto;
+    
+  }
+  #s3 .icon-showcase{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    width:100%;
+    flex-wrap:wrap;
+    row-gap:0.5rem;
+  }
+  #s3 .icon-showcase .cat-icon{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    flex:1 1 0;
+    min-width:70px;
+  }
+  #s3 .icon-showcase .cat-icon img{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:block;
+  }
+  #s3 .icon-showcase .cat-icon span{
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-align:center;
+    color:var(--ink);
+    opacity:0.85;
+  }
+  @media (max-width:768px){
+    #s3 .icon-showcase{row-gap:1.2rem;}
+    #s3 .icon-showcase .cat-icon img{width:42px;height:42px;}
+  }
+  .section-heading{
+    font-family:'Roboto',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    font-size:clamp(2.2rem,4.5vw,3.6rem);
+    margin-bottom:1.4rem;
+  }
+  .about-title{
+    color:var(--maroon);
+    position: relative;
+  }
+  .about-text p{
+    font-size:1.2rem;
+    line-height:1.65;
+    margin-bottom:1rem;
+    max-width:340px;
+    opacity:0.85;
+  }
+  .about-text .highlight{
+    font-weight:700;
+    color:var(--maroon);
+    opacity:1;
+  }
+  #s3 .arrow-btn{
+    margin-top:1.6rem;
+    color:var(--maroon);
+    width:42px;height:42px;
+  }
+  #s4 .arrow-btn{
+    width:42px;height:42px;
+    color:var(--maroon);
+  }
+  #s4 .about-title::after{
+    content:"";
+    position:absolute;
+    left: 23%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 97px;
+    height: 1px;
+    background:var(--maroon);
+  }
+  #s4 .about-text p{max-width:230px;}
+  #s4 .about-text .highlight{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+  }
+  .rack{
+    height:100%;
+    border-radius:6px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 20px 40px -20px rgba(60,30,20,0.35);
+  }
+  .rack img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+
+  .cat-list{display:flex;flex-direction:column;gap:1.1rem;}
+  .cat{
+    display:flex;
+    align-items:center;
+    gap:0.9rem;
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.08em;
+  }
+  .cat .icon{
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .cat .icon svg{width:16px;height:16px;stroke:var(--cream);fill:none;stroke-width:1.6;}
+
+  /* ===== SECTION 4 — OUR STORY ===== */
+  #s4{
+    background:var(--cream);
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:3rem;
+    align-items:center;
+    padding:3vw 7vw;
+    min-height:auto;
+  }
+  .story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:6px;
+    height:100%;
+  }
+  .story-grid .ph{
+    border-radius:2px;
+    position:relative;
+    overflow:hidden;
+  }
+  .story-grid .ph1{background:linear-gradient(160deg,#7a3230,#3d1615);grid-column:1;grid-row:1;background-size:cover;background-position:center;}
+  .story-grid .ph2{background:linear-gradient(160deg,#d9cdb8,#b8a888);grid-column:1;grid-row:2;background-size:cover;background-position:center;}
+  .story-grid .ph3{background:linear-gradient(150deg,#3a4a70,#141d30);grid-column:2;grid-row:1 / span 2;background-size:cover;background-position:center;}
+  .tag-chip{
+    position:absolute;bottom:14px;left:14px;
+    background:rgba(242,236,226,0.92);
+    color:var(--maroon);
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    padding:6px 12px;
+    border-radius:3px;
+    font-size:0.85rem;
+  }
+
+  /* ===== SECTION 5 / 6 — PROJECTS (navy) ===== */
+  .proj{
+    background:linear-gradient(160deg,var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:3vw 7vw;
+    min-height:auto;
+  }
+  .proj-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:1.5rem;
+    margin-bottom:1.6rem;
+  }
+  .proj-title{
+    color:var(--cream);
+  }
+  .proj-sub{
+    font-size:1.75rem;
+    letter-spacing:0.2em;
+    font-weight:600;
+    opacity:0.7;
+    margin-top:0.4rem;
+  }
+  .proj .arrow-btn{margin:0;color:var(--cream);}
+  .proj ul{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+  .proj li{
+    position:relative;
+    padding-left:1.3rem;
+    font-family:'Inter',sans-serif;
+    font-size:1.4rem;
+    opacity:0.9;
+  }
+  .proj li::before{
+    content:"";
+    position:absolute;left:0;top:0.55em;
+    width:6px;height:6px;
+    background:var(--gold);
+    border-radius:50%;
+  }
+  .proj-body{
+    display:flex;
+    flex-wrap:wrap;
+    gap:2.5rem;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .proj-body ul{min-width:180px;align-self:center;}
+  .proj-imgs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    flex:1;
+    min-width:280px;
+  }
+  .proj-imgs .p{
+    border-radius:3px;
+    min-width:140px;
+    flex:1 1 140px;
+    height: 60vh;
+  }
+  #s5 .p1{background:linear-gradient(165deg,#7a3634,#3d1817);}
+  #s5 .p2{background:linear-gradient(165deg,#233457,#141d30);}
+  #s5 .p3{background:linear-gradient(165deg,#e6dcc7,#c7b696);}
+  #s6 .p1{background:linear-gradient(165deg,#dcd0ba,#b6a37e);}
+  #s6 .p2{background:linear-gradient(165deg,#233457,#141d30);}
+  #s6 .p3{background:linear-gradient(165deg,#7c8272,#565b4c);}
+
+  /* ===== SECTION 7 — FOOTER ===== */
+  #s7{
+    background:radial-gradient(120% 140% at 20% 20%, #4A2223 0%, var(--maroon) 45%, var(--maroon-deep) 100%);
+    color:var(--cream);
+    justify-content:center;
+    padding:3vw 7vw;
+    min-height:auto;
+    padding-left:4.5rem;
+  }
+  .footer-title{
+    font-size:clamp(2.4rem,6vw,4.4rem);
+    line-height:1.15;
+    margin-bottom:3.2rem;
+  }
+  .icon-row{
+    display:flex;
+    gap:4.5rem;
+    flex-wrap:wrap;
+    margin-bottom:4.5rem;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+  }
+  .icon-item{text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .icon-item .ic{
+    width:88px;height:88px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:1rem;
+  }
+  .icon-item .ic svg{width:86px;height:86px;stroke:var(--cream);fill:none;stroke-width:0.8px;stroke-linejoin:round;stroke-linecap:round;}
+  @media (min-width:1200px){
+    .icon-row{gap:6rem;}
+    .icon-item .ic{width:120px;height:120px;}
+    .icon-item .ic svg{width:118px;height:118px;}
+  }
+  .icon-item span{font-size:0.75rem;letter-spacing:0.12em;font-weight:600;opacity:0.85;}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+  .footer-wordmark{
+    font-family:'Playfair Display',serif;
+    font-style:normal;
+    font-weight:400;
+    font-size:clamp(2.6rem,6vw,4rem);
+  }
+  .footer-url{font-size:0.9rem;opacity:0.75;}
+
+  @media (max-width:860px){
+    #s1,#s3,#s4{grid-template-columns:1fr;}
+    .hero-figure{height:40vh;order:-1;}
+    .rack,.story-grid{height:40vh;}
+    .proj-imgs .p{height:32vh;}
+    .claims{gap:1.2rem;}
+    .section{padding:9vw 6vw;}
+  }
+
+  .section-line {
+    width: 86%;
+    height: 1px;
+    margin: 0 auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--ink) 15%,
+        var(--ink) 85%,
+        transparent
+    );
+    opacity: 0.3;
+}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION 1 : HERO -->
+<section class="section" id="s1">
+  <span class="num">1</span>
+
+  <a class="arrow-btn hero-topbar" href="#s2" aria-label="Next"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+  <div class="hero-left" style="padding-bottom: 2vw;">
+    <div class="eyebrow">ALEY</div>
+    <h1 class="hero-title">
+      <span class="line1">Fashion</span>
+      <span class="line2">Brand</span>
+    </h1>
+    <p class="hero-tagline">wear your story.<br>own your fit.</p>
+    <a class="hero-url" href="https://www.aley.com" target="_blank" rel="noopener noreferrer">www.aley.com</a>
+  </div>
+  <div class="hero-figure">
+    <div></div>
+  </div>
+</section>
+
+<!-- SECTION 2 : WORDMARK -->
+<section class="section" id="s2">
+  <span class="num" style="color:var(--maroon);">2</span>
+  <span class="est">EST. 2024</span>
+
+  <div style="position: relative;">
+  <div class="wordmark">aley</div>
+  <div class="wordmark-sub">Clothing Co.</div>
+  </div>
+
+  <!-- <img src="Images/aley-logo-transparent-trim.png" alt="aley wordmark" /> -->
+  <div class="claims">
+    <span>MADE FOR EVERY COLOR.</span>
+    <span>MADE FOR EVERY SIZE.</span>
+  </div>
+  <!-- <a class="arrow-btn" href="#s3" aria-label="Next">→</a> -->
+   <a class="arrow-btn" href="#s3" aria-label="Next"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</section>
+
+<div class="section-line"></div>
+
+<!-- SECTION 3 : ABOUT US -->
+<section class="section" id="s3">
+  <span class="num">3</span>
+  <div class="about-text">
+    <h2 class="section-heading about-title">About Us</h2>
+    <p>ALEY began with a simple frustration.</p>
+    <p>We wanted to wear clothes that fit, in colors we love, in styles that feel like us — but we couldn't find them anywhere.</p>
+    <p>So, we created ALEY.</p>
+    <p class="highlight">Real colors. Every size.<br>Every style. For every you.</p>
+    <a class="arrow-btn" href="#s4" aria-label="Next"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <div class="rack">
+    <!-- <img src="Images/aley-rack-hoodies.png" alt="hoodie wardrobe" /> -->
+     <div style="background: url(Images/aley-rack-hoodies.png) center/cover; height: 100%; width: 100%;"></div>
+  </div>
+
+  <div class="icon-showcase">
+      <div class="cat-icon">
+        <img src="Images/hoodie.png" alt="hoodie icon" />
+        <span>HOODS</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/sweatshirt.png" alt="hoodie icon" />
+        <span>SWEATERS</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/cardigan.png" alt="hoodie icon" />
+        <span>CARDIGAN</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/tank.png" alt="hoodie icon" />
+        <span>TANK TOP</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/sweatpants.png" alt="hoodie icon" />
+        <span>SWEATS</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/bellbottoms.png" alt="hoodie icon" />
+        <span>BELL BOTTOMS</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/jeans.png" alt="hoodie icon" />
+        <span>JEANS</span>
+      </div>
+      <div class="cat-icon">
+        <img src="Images/baseball-tee.png" alt="hoodie icon" />
+        <span>BAGGY TSHIRT</span>
+      </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- SECTION 4 : OUR STORY -->
+<section class="section" id="s4">
+  <span class="num">4</span>
+  <div class="about-text">
+    <h2 class="section-heading about-title">Our Story</h2>
+    <p>We couldn't find clothes that came in the shades we loved, in the sizes we needed, with the fits we actually wanted.</p>
+    <p>So we stopped searching, and started building.</p>
+    <p>ALEY is for everyone who's ever felt "almost" fits.</p>
+    <p class="highlight">Here, it finally fits.</p>
+    <a class="arrow-btn" href="#s5" aria-label="Next"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="story-grid">
+    <div class="ph ph1" style="background-image: url(Images/aley-maroon-hoodie-closeup.png);"></div>
+    <div class="ph ph2" style="background-image: url(Images/aley-tag-beige.png);"></div>
+    <div class="ph ph3" style="background-image: url(Images/aley-navy-hoodie-back.png);"></div>
+  </div>
+</section>
+
+<!-- SECTION 5 : PROJECT 1 -->
+<section class="section proj" id="s5">
+  <span class="num" style="color:var(--cream);">5</span>
+  <div>
+    <div class="proj-header">
+      <div class="proj-header-text">
+        <h2 class="section-heading proj-title">Project 1</h2>
+        <div class="proj-sub">INCLUDES TOPS</div>
+      </div>
+      <div class="proj-header-arrow">
+        <a class="arrow-btn" href="#s6" aria-label="Next"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div class="proj-body">
+      <ul>
+        <li>Hoods</li>
+        <li>Sweaters</li>
+        <li>Cardigans</li>
+        <li>Tank Tops</li>
+        <li>Baggy T-Shirts</li>
+      </ul>
+      <div class="proj-imgs" style="max-width: 60%;">
+        <div class="p p1" style="background: url('Images/aley-hoodie.png') bottom/cover;"></div>
+        <div class="p p1" style="background: url('Images/aley-tank.png') bottom/cover;"></div>
+        <div class="p p1" style="background: url('Images/aley-tee.png') bottom/cover;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : PROJECT 2 -->
+<section class="section proj" id="s6">
+  <span class="num" style="color:var(--cream);">6</span>
+  <div>
+    <div class="proj-header">
+      <div class="proj-header-text">
+        <h2 class="section-heading proj-title">Project 2</h2>
+        <div class="proj-sub">INCLUDES BOTTOMS</div>
+      </div>
+      <div class="proj-header-arrow">
+        <a class="arrow-btn" href="#s7" aria-label="Next"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div class="proj-body">
+      <ul>
+        <li>Sweats</li>
+        <li>Bell Bottoms</li>
+        <li>Jeans</li>
+      </ul>
+      <div class="proj-imgs">
+        <div class="p p1" style="background: url('Images/aley-bell-bottoms.png') bottom/cover;;"></div>
+        <div class="p p1" style="background: url('Images/aley-sweats.png') bottom/cover;"></div>
+        <div class="p p1" style="background: url('Images/aley-jeans.png') bottom/cover;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="s7">
+  <span class="num">7</span>
+  <h2 class="section-heading footer-title">Made for you.<br>Made for all.</h2>
+  <div class="icon-row">
+    <div class="icon-item">
+      <span class="ic">
+        <svg viewBox="0 0 24 24"><path d="M12 20.5 C12 20.5 3.5 15.4 3.5 9.4 C3.5 6.4 5.8 4.2 8.4 4.2 C10 4.2 11.3 5 12 6.1 C12.7 5 14 4.2 15.6 4.2 C18.2 4.2 20.5 6.4 20.5 9.4 C20.5 15.4 12 20.5 12 20.5 Z"/></svg>
+      </span>
+      <span>EVERY SIZE</span>
+    </div>
+    <div class="icon-item">
+      <span class="ic"><svg viewBox="0 0 160 120"><path d="M80 15 C80 10 83 7 87 7 C93 7 97 11 97 17 C97 24 91 27 87 30 C84 32 82 34 81 38" stroke="var(--cream)" stroke-width="6"/><path d="M81 38 C79 40 76 42 72 44 L20 76 C16 78 18 83 23 83 H137 C142 83 144 78 140 76 L88 44 C85 42 83 40 81 38Z" stroke="var(--cream)" stroke-width="6"/></svg></span>
+      <span>TIMELESS STYLES</span>
+    </div>
+    <div class="icon-item">
+      <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M10 12.5 L7.5 20.5 L12 18 L16.5 20.5 L14 12.5"/><path d="M9.3 8 L11 9.7 L14.7 6"/></svg></span>
+      <span>QUALITY FIRST</span>
+    </div>
+    <div class="icon-item">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M19 5 C11 5 5 9 5 17 C5 18.5 5.3 19 5.3 19 C5.3 19 5.8 19.3 7.3 19.3 C15.3 19.3 19 13.3 19 5 Z"/><path d="M5.5 19.5 L14 11"/></svg></span>
+      <span>MADE TO LAST</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-wordmark">aley</div>
+    <div class="footer-url">www.aley.com</div>
+  </div>
+</section>
+
+</body>
+</html>
